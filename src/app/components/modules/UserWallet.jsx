@@ -26,6 +26,7 @@ import {
 } from 'app/client_config';
 import * as transactionActions from 'app/redux/TransactionReducer';
 import * as globalActions from 'app/redux/GlobalReducer';
+import * as userActions from 'app/redux/UserReducer';
 
 const assetPrecision = 1000;
 
@@ -765,11 +766,17 @@ export default connect(
     // mapStateToProps
     (state, ownProps) => {
         let price_per_steem = undefined;
-        const feed_price = state.global.get('feed_price');
-        if (feed_price && feed_price.has('base') && feed_price.has('quote')) {
-            const { base, quote } = feed_price.toJS();
-            if (/ SBD$/.test(base) && / STEEM$/.test(quote))
-                price_per_steem = parseFloat(base.split(' ')[0]);
+        let steem_api_price = state.user.get('steem_api_price');
+        if (steem_api_price) {
+            price_per_steem = steem_api_price;
+        } else {
+            // remove else conditional once tested
+            const feed_price = state.global.get('feed_price');
+            if (feed_price && feed_price.has('base') && feed_price.has('quote')) {
+                const { base, quote } = feed_price.toJS();
+                if (/ SBD$/.test(base) && / STEEM$/.test(quote))
+                    price_per_steem = parseFloat(base.split(' ')[0]);
+            }
         }
         const savings_withdraws = state.user.get('savings_withdraws');
         const gprops = state.global.get('props');
