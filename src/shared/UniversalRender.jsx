@@ -21,7 +21,7 @@ import createSagaMiddleware from 'redux-saga';
 import { syncHistoryWithStore } from 'react-router-redux';
 import rootReducer from 'app/redux/RootReducer';
 import { fetchDataWatches } from 'app/redux/FetchDataSaga';
-import { marketWatches } from 'app/redux/MarketSaga';
+//import { marketWatches } from 'app/redux/MarketSaga';
 import { sharedWatches } from 'app/redux/SagaShared';
 import { userWatches } from 'app/redux/UserSaga';
 import { authWatches } from 'app/redux/AuthSaga';
@@ -201,8 +201,8 @@ const sagaMiddleware = createSagaMiddleware(
     ...fetchDataWatches,
     ...sharedWatches,
     ...authWatches,
-    ...transactionWatches,
-    ...marketWatches
+    ...transactionWatches
+    //    ...marketWatches
 );
 
 let middleware;
@@ -383,8 +383,9 @@ async function universalRender({
             }
         }
         // Calculate signup bonus
+        const base = '';
+        const quote = '';
         const fee = parseFloat($STM_Config.registrar_fee.split(' ')[0]),
-            { base, quote } = onchain.feed_price,
             feed =
                 parseFloat(base.split(' ')[0]) /
                 parseFloat(quote.split(' ')[0]);

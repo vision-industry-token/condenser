@@ -213,6 +213,14 @@ class UserWallet extends React.Component {
                 ]);
             }, []);
 
+        const balance_steem = 0.0;
+        const saving_balance_steem = 0.0;
+        const divesting = 0.0;
+        const sbd_balance = 0.0;
+        const sbd_balance_savings = 0.0;
+        const sbdOrders = 0;
+        const steemOrders = 0;
+        /*
         const balance_steem = parseFloat(account.get('balance').split(' ')[0]);
         const saving_balance_steem = parseFloat(savings_balance.split(' ')[0]);
         const divesting =
@@ -241,7 +249,7 @@ class UserWallet extends React.Component {
                       }
                       return o;
                   }, 0) / assetPrecision;
-
+        */
         // set displayed estimated value
         const total_sbd =
             sbd_balance +
