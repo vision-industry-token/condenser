@@ -122,7 +122,7 @@ class UserWallet extends React.Component {
         };
 
         const savings_balance = account.get('savings_balance');
-        const savings_sbd_balance = account.get('savings_sbd_balance');
+        const savings_sbd_balance = 0; //account.get('savings_sbd_balance');
 
         const powerDown = (cancel, e) => {
             e.preventDefault();
@@ -461,10 +461,13 @@ class UserWallet extends React.Component {
             parseFloat(account.get('reward_steem_balance').split(' ')[0]) > 0
                 ? account.get('reward_steem_balance')
                 : null;
+        const reward_sbd = null;
+        /*
         const reward_sbd =
             parseFloat(account.get('reward_sbd_balance').split(' ')[0]) > 0
                 ? account.get('reward_sbd_balance')
                 : null;
+        */
         const reward_sp =
             parseFloat(account.get('reward_vesting_steem').split(' ')[0]) > 0
                 ? account
@@ -474,7 +477,7 @@ class UserWallet extends React.Component {
 
         let rewards = [];
         if (reward_steem) rewards.push(reward_steem);
-        if (reward_sbd) rewards.push(reward_sbd);
+        //if (reward_sbd) rewards.push(reward_sbd);
         if (reward_sp) rewards.push(reward_sp);
 
         let rewards_str;
@@ -822,7 +825,7 @@ export default connect(
             const operation = {
                 account: username,
                 reward_steem: account.get('reward_steem_balance'),
-                reward_sbd: account.get('reward_sbd_balance'),
+                //reward_sbd: account.get('reward_sbd_balance'),
                 reward_vests: account.get('reward_vesting_balance'),
             };
 
