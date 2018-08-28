@@ -9,14 +9,14 @@ export const APP_ICON = 'steem'; // don't change this value, the icon has been c
 // vars. client should read $STM_Config, server should read config package.
 export const APP_URL = 'https://touchit.social';
 export const APP_DOMAIN = 'touchit.social';
-export const LIQUID_TOKEN = 'VIT';
+export const LIQUID_TOKEN = 'WIT';
 // sometimes it's impossible to use html tags to style coin name, hence usage of _UPPERCASE modifier
-export const LIQUID_TOKEN_UPPERCASE = 'VIT';
-export const VESTING_TOKEN = 'VIT POWER';
-export const INVEST_TOKEN_UPPERCASE = 'VIT POWER';
+export const LIQUID_TOKEN_UPPERCASE = 'WIT';
+export const VESTING_TOKEN = 'WIT POWER';
+export const INVEST_TOKEN_UPPERCASE = 'WIT POWER';
 export const INVEST_TOKEN_SHORT = 'SP';
-export const DEBT_TOKEN = 'VIT DOLLAR';
-export const DEBT_TOKENS = 'VIT DOLLARS';
+export const DEBT_TOKEN = 'WIT DOLLAR';
+export const DEBT_TOKENS = 'WIT DOLLARS';
 export const CURRENCY_SIGN = '$';
 export const WIKI_URL = ''; // https://wiki.golos.io/
 export const LANDING_PAGE_URL = 'https://steem.io/';
@@ -32,7 +32,7 @@ export const AVATAR_SIZE_MEDIUM = 128;
 export const AVATAR_SIZE_LARGE = 512;
 
 // these are dealing with asset types, not displaying to client, rather sending data over websocket
-export const LIQUID_TICKER = 'VIT';
+export const LIQUID_TICKER = 'WIT';
 export const VEST_TICKER = 'VESTS';
 export const DEBT_TICKER = 'SBD';
 export const DEBT_TOKEN_SHORT = 'SBD';
@@ -52,7 +52,7 @@ export const TWITTER_SHARE_IMAGE =
     'https://' + APP_DOMAIN + '/images/steemit-twshare.png';
 export const SITE_DESCRIPTION =
     'vit.tube is a social media platform where everyone gets paid for ' +
-    'creating and curating content. It leverages a robust digital points system, called VIT, that ' +
+    'creating and curating content. It leverages a robust digital points system, called WIT, that ' +
     'supports real value for digital rewards through market price discovery and liquidity';
 
 // various
