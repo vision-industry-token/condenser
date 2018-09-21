@@ -635,7 +635,7 @@ class UserWallet extends React.Component {
                 {/*
                 <div className="UserWallet__balance row">
                     <div className="column small-12 medium-8">
-                        {LIQUID_TOKEN_UPPERCASE} DOLLARS
+                        {LIQUID_TOKEN_UPPERCASE}
                         <div className="secondary">{sbdMessage}</div>
                     </div>
                     <div className="column small-12 medium-4">
