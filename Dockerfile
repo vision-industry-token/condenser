@@ -30,8 +30,9 @@ CMD [ "yarn", "run", "start" ]
 ## Production ##
 FROM Base as PreProduction
 RUN rm -rf .git
-FROM node:8.7-alpine as Production
+
+FROM node:8.7-alpine
 WORKDIR /var/app
-COPY --from=PreProduction /var/app /var/app
+COPY --from=2 /var/app /var/app
 ENV NODE_ENV production
 CMD [ "yarn", "run", "production" ]
