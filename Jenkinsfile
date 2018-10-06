@@ -7,7 +7,7 @@ pipeline {
       steps {
         sh 'apk update'
         sh 'apk add git'
-        sh 'yarn add jest'
+        sh 'yarn add jest --network-concurrency 1'
       }
     }
     stage('Test') {
