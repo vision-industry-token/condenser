@@ -64,7 +64,6 @@ ul.PostsList__summaries {
 .PostSummary.with-image .PostSummary__content {
   margin-left: 8.25rem;
 }
-
 .PostSummary__header {
   > h3 {
     font: 600 100% "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
@@ -95,7 +94,7 @@ ul.PostsList__summaries {
   padding: 0.3rem 0.1rem 0.15rem;
   font-family: "Helvetica Neue", Helvetica, Verdana, Arial, sans-serif;
   @include themify($themes) {
-    color: themed('textColorPrimary');  
+    color: themed('textColorPrimary');
   }
   overflow: hidden;
   line-height: 1.4;
@@ -104,8 +103,8 @@ ul.PostsList__summaries {
   a {
     display: inline;
     @include themify($themes) {
-      color: themed('textColorPrimary');  
-    }    
+      color: themed('textColorPrimary');
+    }
   }
 }
 
@@ -139,8 +138,8 @@ ul.PostsList__summaries {
   }
   padding-left: 1rem;
   @include themify($themes) {
-    border-left: themed('borderLight'); 
-  } 
+    border-left: themed('borderLight');
+  }
 
   .Reblog__button {
     margin-right: 1rem;

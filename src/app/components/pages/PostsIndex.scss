@@ -496,13 +496,19 @@
     margin-bottom: 18px;
   }
   &__tag-link {
-     @include font-size(14px);
+    @include font-size(14px);
     @include themify($themes) {
-        color: themed('textColorSecondary');
-      }
+      color: themed('textColorSecondary');
+    }
     a {
       @extend .link;
       @extend .link--secondary;
+    }
+    path {
+      transition: 0.2s all ease-in-out;
+      @include themify($themes) {
+        fill: themed('iconColorSecondary');
+      }
     }
   }
   &__flag {

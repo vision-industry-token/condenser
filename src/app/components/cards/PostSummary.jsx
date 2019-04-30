@@ -100,6 +100,7 @@ class PostSummary extends React.Component {
             .toJS();
         const p = extractContent(immutableAccessor, content);
         const desc = p.desc;
+        const meta = p.json_metadata;
 
         const archived = content.get('cashout_time') === '1969-12-31T23:59:59'; // TODO: audit after HF17. #1259
         const full_power = content.get('percent_steem_dollars') === 0;
@@ -137,6 +138,15 @@ class PostSummary extends React.Component {
                 </Link>
             </h2>
         );
+
+        let posticon = null;
+        if (meta !== null && meta.vit_data && meta.vit_data.Playlist) {
+            posticon = (
+                <span className="articles__tag-link">
+                    &nbsp;•&nbsp;<Icon name="video" />
+                </span>
+            );
+        }
 
         // author and category
         const author_category = (
@@ -199,6 +209,7 @@ class PostSummary extends React.Component {
                                 </span>
                             )}
                         </Link>
+                        {posticon}
                     </div>
                 </div>
                 <div className="articles__flag clearfix">
