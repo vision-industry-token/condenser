@@ -21,6 +21,7 @@
     "setAllHeaders": true
   },
   "img_proxy_prefix": "https://media.vit.tube/resize/",
+  "img_view_url": "https://media.vit.tube/view/",
   "ipfs_prefix": false,
   "mixpanel": false,
   "newrelic": false,
@@ -69,6 +70,8 @@
     "auth_token": false
   },
   "upload_image": false,
+  "video_playback_url": "https://media.vit.tube/playback/",
+  "video_default_screenshot": "screenshot-01.jpg",
   "steemd_connection_client": "https://jussi.proto.vit.tube/",
   "steemd_connection_server": "https://jussi.proto.vit.tube/",
   "steemd_use_appbase": false,

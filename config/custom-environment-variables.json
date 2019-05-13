@@ -18,6 +18,7 @@
     }
   },
   "img_proxy_prefix": "SDC_IMAGE_PROXY_PREFIX",
+  "img_view_url": "SDC_IMAGE_VIEW_URL",
   "mixpanel": "SDC_MIXPANEL",
   "newrelic": "SDC_NEWRELIC_LICENSE_KEY",
   "notify": {
@@ -63,6 +64,8 @@
     "auth_token": "SDC_TWILIO_AUTH_TOKEN"
   },
   "upload_image": "SDC_UPLOAD_IMAGE_URL",
+  "video_default_screenshot": "SDC_VIDEO_DEFAULT_SCREENSHOT",
+  "video_playback_url": "SDC_VIDEO_PLAYBACK_URL",
   "session_cookie_key": "SDC_SESSION_COOKIE_KEY",
   "steemd_connection_client": "SDC_CLIENT_STEEMD_URL",
   "steemd_connection_server": "SDC_SERVER_STEEMD_URL",

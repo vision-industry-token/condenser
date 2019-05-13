@@ -209,10 +209,9 @@ class MarkdownViewer extends Component {
                         controls
                         width={'100%'}
                         key={jsonMetadata.vit_data.Hash}
-                        url={
-                            'https://media.vit.tube/playback/' +
+                        url={`${$STM_Config.video_playback_url}${
                             jsonMetadata.vit_data.Playlist
-                        }
+                        }`}
                         config={{ file: { forceHLS: true } }}
                     />
                 </div>

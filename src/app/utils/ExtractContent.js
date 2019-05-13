@@ -58,10 +58,9 @@ export default function extractContent(get, content) {
             jsonMetadata.vit_data &&
             jsonMetadata.vit_data.Screenshot
         ) {
-            image_link =
-                'https://media.vit.tube/view/' +
-                jsonMetadata.vit_data.Screenshot +
-                '/screenshot-01.jpg';
+            image_link = `${$STM_Config.img_view_url}${
+                jsonMetadata.vit_data.Screenshot
+            }/${$STM_Config.video_default_screenshot}`;
         }
         // First, attempt to find an image url in the json metadata
         if (jsonMetadata && jsonMetadata.image) {
