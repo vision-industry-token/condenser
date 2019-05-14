@@ -202,7 +202,8 @@ export function shouldDisplayPost(state, post) {
         let json_metadata = JSON.parse(
             state.content.get(post).get('json_metadata')
         );
-        return json_metadata.tags.includes('touchit-social');
+        // return json_metadata.tags.includes('touchit-social');
+        return true;
     } catch (e) {
         return false;
     }

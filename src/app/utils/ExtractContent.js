@@ -53,6 +53,15 @@ export default function extractContent(get, content) {
             // At least one case where jsonMetadata was double-encoded: #895
             jsonMetadata = JSON.parse(jsonMetadata);
         }
+        if (
+            jsonMetadata &&
+            jsonMetadata.vit_data &&
+            jsonMetadata.vit_data.Screenshot
+        ) {
+            image_link = `${$STM_Config.img_view_url}${
+                jsonMetadata.vit_data.Screenshot
+            }/${$STM_Config.video_default_screenshot}`;
+        }
         // First, attempt to find an image url in the json metadata
         if (jsonMetadata && jsonMetadata.image) {
             image_link = getValidImage(jsonMetadata.image);

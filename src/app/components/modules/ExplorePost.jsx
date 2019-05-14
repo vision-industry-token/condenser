@@ -9,6 +9,7 @@ import tt from 'counterpart';
 class ExplorePost extends Component {
     static propTypes = {
         permlink: PropTypes.string.isRequired,
+        short_url: PropTypes.string,
     };
 
     constructor(props) {
@@ -17,21 +18,16 @@ class ExplorePost extends Component {
             copied: false,
         };
         this.onCopy = this.onCopy.bind(this);
-        this.Steemd = this.Steemd.bind(this);
-        this.Steemdb = this.Steemdb.bind(this);
-        this.Busy = this.Busy.bind(this);
+        this.TouchTube = this.TouchTube.bind(this);
+        this.ChainExplorer = this.ChainExplorer.bind(this);
     }
 
-    Steemd() {
-        serverApiRecordEvent('SteemdView', this.props.permlink);
+    TouchTube() {
+        serverApiRecordEvent('TouchTubeView', this.props.permlink);
     }
 
-    Steemdb() {
-        serverApiRecordEvent('SteemdbView', this.props.permlink);
-    }
-
-    Busy() {
-        serverApiRecordEvent('Busy view', this.props.permlink);
+    ChainExplorer() {
+        serverApiRecordEvent('ChainExplorerView', this.props.permlink);
     }
 
     onCopy() {
@@ -41,11 +37,11 @@ class ExplorePost extends Component {
     }
 
     render() {
+        const short_url = this.props.short_url;
         const link = this.props.permlink;
-        const steemd = 'https://steemd.com' + link;
-        const steemdb = 'https://steemdb.com' + link;
-        const busy = 'https://busy.org' + link;
-        const steemit = 'https://steemit.com' + link;
+        const chainexplorer = 'https://explore.vit.tube' + link;
+        const touchitsocial = 'https://touchit.social' + link;
+        const touchtube = 'https://touch.tube' + short_url;
         let text =
             this.state.copied == true
                 ? tt('explorepost_jsx.copied')
@@ -58,11 +54,11 @@ class ExplorePost extends Component {
                     <input
                         className="input-group-field share-box"
                         type="text"
-                        value={steemit}
+                        value={touchitsocial}
                         onChange={e => e.preventDefault()}
                     />
                     <CopyToClipboard
-                        text={steemit}
+                        text={touchitsocial}
                         onCopy={this.onCopy}
                         className="ExplorePost__copy-button input-group-label"
                     >
@@ -73,34 +69,34 @@ class ExplorePost extends Component {
                 <ul>
                     <li>
                         <a
-                            href={steemd}
-                            onClick={this.Steemd}
+                            href={touchtube}
+                            onClick={this.TouchTube}
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            steemd.com <Icon name="extlink" />
+                            touch.tube <Icon name="extlink" />
                         </a>
                     </li>
                     <li>
                         <a
-                            href={steemdb}
-                            onClick={this.Steemdb}
+                            href={chainexplorer}
+                            onClick={this.ChainExplorer}
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            steemdb.com <Icon name="extlink" />
+                            chain explorer <Icon name="extlink" />
                         </a>
                     </li>
-                    <li>
-                        <a
-                            href={busy}
-                            onClick={this.Busy}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            busy.org <Icon name="extlink" />
-                        </a>
-                    </li>
+                    {/*<li>*/}
+                    {/*    <a*/}
+                    {/*        href={busy}*/}
+                    {/*        onClick={this.Busy}*/}
+                    {/*        target="_blank"*/}
+                    {/*        rel="noopener noreferrer"*/}
+                    {/*    >*/}
+                    {/*        busy.org <Icon name="extlink" />*/}
+                    {/*    </a>*/}
+                    {/*</li>*/}
                 </ul>
             </span>
         );

@@ -85,7 +85,6 @@ class PostFull extends React.Component {
         this.fbShare = this.fbShare.bind(this);
         this.twitterShare = this.twitterShare.bind(this);
         this.redditShare = this.redditShare.bind(this);
-        this.linkedInShare = this.linkedInShare.bind(this);
         this.showExplorePost = this.showExplorePost.bind(this);
         this.onShowReply = () => {
             const { state: { showReply, formId } } = this;
@@ -184,34 +183,6 @@ class PostFull extends React.Component {
         window.open('https://www.reddit.com/submit?' + q, 'Share');
     }
 
-    linkedInShare(e) {
-        serverApiRecordEvent('LinkedInShare', this.share_params.link);
-        e.preventDefault();
-        const winWidth = 720;
-        const winHeight = 480;
-        const winTop = screen.height / 2 - winWidth / 2;
-        const winLeft = screen.width / 2 - winHeight / 2;
-        const s = this.share_params;
-        const q =
-            'title=' +
-            encodeURIComponent(s.title) +
-            '&url=' +
-            encodeURIComponent(s.url) +
-            '&source=Steemit&mini=true';
-        window.open(
-            'https://www.linkedin.com/shareArticle?' + q,
-            'Share',
-            'top=' +
-                winTop +
-                ',left=' +
-                winLeft +
-                ',toolbar=0,status=0,width=' +
-                winWidth +
-                ',height=' +
-                winHeight
-        );
-    }
-
     showPromotePost = () => {
         const post_content = this.props.cont.get(this.props.post);
         if (!post_content) return;
@@ -222,7 +193,8 @@ class PostFull extends React.Component {
 
     showExplorePost = () => {
         const permlink = this.share_params.link;
-        this.props.showExplorePost(permlink);
+        const short_url = this.share_params.short_url;
+        this.props.showExplorePost(permlink, short_url);
     };
 
     render() {
@@ -254,6 +226,7 @@ class PostFull extends React.Component {
             document.title = title + ' — ' + APP_NAME;
 
         let content_body = content.body;
+        const short_url = `/@${author}/${permlink}`;
         const url = `/${category}/@${author}/${permlink}`;
         const bDMCAStop = this.props.dmcaContents.includes(url);
         const bIllegalContentUser = this.props.blockedUsers.includes(
@@ -288,6 +261,7 @@ class PostFull extends React.Component {
         };
 
         this.share_params = {
+            short_url,
             link,
             url: 'https://' + APP_DOMAIN + link,
             title: title + ' — ' + APP_NAME,
@@ -315,13 +289,6 @@ class PostFull extends React.Component {
                 value: 'Reddit',
                 title: tt('postfull_jsx.share_on_reddit'),
                 icon: 'reddit',
-            },
-            {
-                link: '#',
-                onClick: this.linkedInShare,
-                value: 'LinkedIn',
-                title: tt('postfull_jsx.share_on_linkedin'),
-                icon: 'linkedin',
             },
         ];
 
@@ -570,11 +537,11 @@ export default connect(
                 })
             );
         },
-        showExplorePost: permlink => {
+        showExplorePost: (permlink, short_url) => {
             dispatch(
                 globalActions.showDialog({
                     name: 'explorePost',
-                    params: { permlink },
+                    params: { permlink, short_url },
                 })
             );
         },

@@ -8,6 +8,7 @@ import sanitizeConfig, { noImageText } from 'app/utils/SanitizeConfig';
 import sanitize from 'sanitize-html';
 import HtmlReady from 'shared/HtmlReady';
 import tt from 'counterpart';
+import ReactPlayer from 'react-player';
 
 const remarkable = new Remarkable({
     html: true, // remarkable renders first then sanitize runs...
@@ -76,7 +77,9 @@ class MarkdownViewer extends Component {
         if (!text) text = ''; // text can be empty, still view the link meta data
         const {
             large,
-            /*formId, canEdit, jsonMetadata,*/ highQualityPost,
+            jsonMetadata,
+            /*formId, canEdit, */
+            highQualityPost,
         } = this.props;
 
         let html = false;
@@ -192,6 +195,26 @@ class MarkdownViewer extends Component {
                     key={idx++}
                     dangerouslySetInnerHTML={{ __html: section }}
                 />
+            );
+        }
+
+        if (
+            jsonMetadata !== null &&
+            jsonMetadata.vit_data &&
+            jsonMetadata.vit_data.Playlist
+        ) {
+            sections.push(
+                <div className="videoWrapper">
+                    <ReactPlayer
+                        controls
+                        width={'100%'}
+                        key={jsonMetadata.vit_data.Hash}
+                        url={`${$STM_Config.video_playback_url}${
+                            jsonMetadata.vit_data.Playlist
+                        }`}
+                        config={{ file: { forceHLS: true } }}
+                    />
+                </div>
             );
         }
 

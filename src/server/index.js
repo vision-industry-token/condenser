@@ -34,6 +34,9 @@ global.$STM_Config = {
     google_analytics_id: config.get('google_analytics_id'),
     dmca_content_endpoint: config.get('dmca_content_endpoint'),
     dmca_user_endpoint: config.get('dmca_user_endpoint'),
+    img_view_url: config.get('img_view_url'),
+    video_default_screenshot: config.get('video_default_screenshot'),
+    video_playback_url: config.get('video_playback_url'),
 };
 
 const WebpackIsomorphicTools = require('webpack-isomorphic-tools');

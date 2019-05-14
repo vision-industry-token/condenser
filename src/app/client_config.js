@@ -1,9 +1,9 @@
 // sometimes it's impossible to use html tags to style coin name, hence usage of _UPPERCASE modifier
-export const APP_NAME = 'vit.tube';
+export const APP_NAME = 'touchit.social';
 // sometimes APP_NAME is written in non-latin characters, but they are needed for technical purposes
 // ie. "Голос" > "Golos"
-export const APP_NAME_LATIN = 'vit.tube';
-export const APP_NAME_UPPERCASE = 'VIT.TUBE';
+export const APP_NAME_LATIN = 'touchit.social';
+export const APP_NAME_UPPERCASE = 'TOUCHIT.SOCIAL';
 export const APP_ICON = 'steem'; // don't change this value, the icon has been changed
 // FIXME figure out best way to do this on both client and server from env
 // vars. client should read $STM_Config, server should read config package.
@@ -26,7 +26,7 @@ export const WHITEPAPER_URL =
     'https://vicetoken.com/static/Vice_Industry_Token_Whitepaper.pdf';
 
 // default avatar and sizes
-export const DEFAULT_AVATAR = 'https://proto.touchit.social/images/user.png';
+export const DEFAULT_AVATAR = 'https://touchit.social/images/user.png';
 export const AVATAR_SIZE_SMALL = 64;
 export const AVATAR_SIZE_MEDIUM = 128;
 export const AVATAR_SIZE_LARGE = 512;
