@@ -5,16 +5,17 @@
   "google_analytics_id": false,
   "helmet": {
     "directives": {
-      "childSrc": "'self' www.youtube.com staticxx.facebook.com w.soundcloud.com player.vimeo.com",
+      "childSrc": "'self' www.youtube.com staticxx.facebook.com w.soundcloud.com player.vimeo.com blob:",
       "connectSrc": "'self' vit.tube wss://peer.proto.vit.tube https://jussi.proto.vit.tube api.blocktrades.us",
-      "defaultSrc": "'self' www.youtube.com staticxx.facebook.com player.vimeo.com",
+      "defaultSrc": "'self' www.youtube.com staticxx.facebook.com player.vimeo.com blob:",
       "fontSrc": "data: fonts.gstatic.com",
       "frameAncestors": "'none'",
       "imgSrc": "* data:",
       "objectSrc": "'none'",
       "pluginTypes": "application/pdf",
-      "scriptSrc": "'self' www.google-analytics.com connect.facebook.net",
+      "scriptSrc": "'self' www.google-analytics.com connect.facebook.net cdnjs.cloudflare.com",
       "styleSrc": "'self' 'unsafe-inline' fonts.googleapis.com",
+      "mediaSrc": "'self' vit.tube proto.touchit.social touchit.social blob:",
       "reportUri": "/api/v1/csp_violation"
     },
     "reportOnly": false,
