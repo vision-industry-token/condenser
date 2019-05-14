@@ -204,10 +204,12 @@ class MarkdownViewer extends Component {
             jsonMetadata.vit_data.Playlist
         ) {
             sections.push(
-                <div className="videoWrapper">
+                <div className="player-wrapper">
                     <ReactPlayer
+                        className="react-player"
                         controls
-                        width={'100%'}
+                        width="100%"
+                        height="100%"
                         key={jsonMetadata.vit_data.Hash}
                         url={`${$STM_Config.video_playback_url}${
                             jsonMetadata.vit_data.Playlist
