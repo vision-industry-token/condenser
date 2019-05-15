@@ -197,14 +197,17 @@ class MarkdownViewer extends Component {
                 />
             );
         }
-
         if (
+            typeof jsonMetadata !== 'undefined' &&
             jsonMetadata !== null &&
             jsonMetadata.vit_data &&
             jsonMetadata.vit_data.Playlist
         ) {
             sections.push(
-                <div className="player-wrapper">
+                <div
+                    className="player-wrapper"
+                    key={jsonMetadata.vit_data.Hash + '_div'}
+                >
                     <ReactPlayer
                         className="react-player"
                         controls

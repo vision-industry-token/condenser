@@ -83,8 +83,8 @@ class ReplyEditor extends React.Component {
                 const { category, title } = this.state;
                 if (category) category.props.onChange(draft.category);
                 if (title) title.props.onChange(draft.title);
-                if (draft.payoutType)
-                    this.props.setPayoutType(formId, draft.payoutType);
+                // if (draft.payoutType)
+                //     this.props.setPayoutType(formId, draft.payoutType);
                 raw = draft.body;
             }
 
@@ -212,7 +212,7 @@ class ReplyEditor extends React.Component {
                 rte_value: stateFromHtml(this.props.richTextEditor),
             });
             this.setState({ progress: {} });
-            this.props.setPayoutType(formId, defaultPayoutType);
+            // this.props.setPayoutType(formId, defaultPayoutType);
             if (onCancel) onCancel(e);
         }
     };
