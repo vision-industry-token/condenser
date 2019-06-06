@@ -8,7 +8,9 @@ import sanitizeConfig, { noImageText } from 'app/utils/SanitizeConfig';
 import sanitize from 'sanitize-html';
 import HtmlReady from 'shared/HtmlReady';
 import tt from 'counterpart';
-import ReactPlayer from 'react-player';
+
+import HLSSource from '../elements/video/HLS';
+import { Player, BigPlayButton } from 'video-react';
 
 const remarkable = new Remarkable({
     html: true, // remarkable renders first then sanitize runs...
@@ -203,22 +205,21 @@ class MarkdownViewer extends Component {
             jsonMetadata.vit_data &&
             jsonMetadata.vit_data.Playlist
         ) {
+            let screenShot = `${$STM_Config.img_view_url}${
+                jsonMetadata.vit_data.Screenshot
+            }/${$STM_Config.video_default_screenshot}`;
+
             sections.push(
-                <div
-                    className="player-wrapper"
-                    key={jsonMetadata.vit_data.Hash + '_div'}
-                >
-                    <ReactPlayer
-                        className="react-player"
-                        controls
-                        width="100%"
-                        height="100%"
-                        key={jsonMetadata.vit_data.Hash}
-                        url={`${$STM_Config.video_playback_url}${
-                            jsonMetadata.vit_data.Playlist
-                        }`}
-                        config={{ file: { forceHLS: true } }}
-                    />
+                <div key="video-player">
+                    <Player playsInline poster={screenShot}>
+                        <HLSSource
+                            src={`${$STM_Config.video_playback_url}${
+                                jsonMetadata.vit_data.Playlist
+                            }`}
+                        />
+                        <BigPlayButton position="center" />
+                        {/*<SwipeSeekingController order={3.5} />*/}
+                    </Player>
                 </div>
             );
         }
