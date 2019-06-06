@@ -13,7 +13,7 @@ import tt from 'counterpart';
 const Long = ByteBuffer.Long;
 const { string, func, object } = PropTypes;
 
-const DISABLED_SIGNING_KEY = 'STM1111111111111111111111111111111114T1Anm';
+const DISABLED_SIGNING_KEY = 'VIT1111111111111111111111111111111114T1Anm';
 
 function _blockGap(head_block, last_block) {
     if (!last_block || last_block < 1) return 'forever';
