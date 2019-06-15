@@ -15,7 +15,7 @@
       "pluginTypes": "application/pdf",
       "scriptSrc": "'self' www.google-analytics.com connect.facebook.net cdnjs.cloudflare.com",
       "styleSrc": "'self' 'unsafe-inline' fonts.googleapis.com",
-      "mediaSrc": "'self' vit.tube proto.touchit.social touchit.social blob:",
+      "mediaSrc": "'self' vit.tube touchit.social blob:",
       "reportUri": "/api/v1/csp_violation"
     },
     "reportOnly": false,

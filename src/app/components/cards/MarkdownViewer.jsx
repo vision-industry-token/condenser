@@ -9,7 +9,7 @@ import sanitize from 'sanitize-html';
 import HtmlReady from 'shared/HtmlReady';
 import tt from 'counterpart';
 
-import HLSSource from '../elements/video/HLS';
+import HLSSource from '../elements/Video/HLSSource';
 import { Player, BigPlayButton } from 'video-react';
 
 const remarkable = new Remarkable({
@@ -211,14 +211,17 @@ class MarkdownViewer extends Component {
 
             sections.push(
                 <div key="video-player">
-                    <Player playsInline poster={screenShot}>
+                    <Player playsInline
+                            crossorigin
+                            preload={"auto"}
+                            poster={screenShot}>
                         <HLSSource
+                            isVideoChild
                             src={`${$STM_Config.video_playback_url}${
                                 jsonMetadata.vit_data.Playlist
                             }`}
                         />
                         <BigPlayButton position="center" />
-                        {/*<SwipeSeekingController order={3.5} />*/}
                     </Player>
                 </div>
             );
