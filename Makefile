@@ -1,17 +1,26 @@
-default: test
+ifndef REGISTRY
+$(error REGISTRY is not set, REGISTRY=...)
+endif
+ifndef BUILD
+$(error BUILD is not set, BUILD=r1)
+endif
+NAME   := ${REGISTRY}/condenser
+TAG    := $$(git log -1 --pretty=%h)${BUILD}
+IMG    := ${NAME}:${TAG}
+LATEST := ${NAME}:latest
 
-test: node_modules
-	npm test
-
-node_modules:
-	yarn install
+all: build push
+	echo ${TAG}
 
 build:
-	docker build -t steemit/steemit.com .
+	docker build \
+		--build-arg DMCA_USER_ENDPOINT=/blank \
+		--build-arg DMCA_CONTENT_ENDPOINT=/blank \
+		-t ${IMG} .
+	docker tag ${IMG} ${LATEST}
 
-clean:
-	rm -rf node_modules *.log tmp npm-debug.log.*
+push:
+	docker push ${NAME}
 
-vagrant:
-	vagrant destroy -f
-	vagrant up
+login:
+	docker log -u ${DOCKER_USER} -p ${DOCKER_PASS} ${DOCKER_REGISTRY}
