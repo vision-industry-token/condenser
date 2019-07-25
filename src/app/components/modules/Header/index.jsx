@@ -334,12 +334,12 @@ class Header extends React.Component {
                         )}
 
                         {/*HAMBURGER*/}
-                        {/* <span
+                        <span
                             onClick={showSidePanel}
                             className="toggle-menu Header__hamburger"
                         >
                             <span className="hamburger" />
-                        </span> */}
+                        </span>
                     </div>
                 </nav>
             </header>

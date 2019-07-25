@@ -9,6 +9,7 @@ if (!process.env.BROWSER) {
     // please note we don't need to define require.context for client side rendering because it's defined by webpack
     const path = require('path');
     const fs = require('fs');
+    // noinspection JSAnnotator
     function getFolderContents(folder, recursive) {
         return fs.readdirSync(folder).reduce(function(list, file) {
             var name = path.resolve(folder, file);
@@ -18,6 +19,7 @@ if (!process.env.BROWSER) {
             );
         }, []);
     }
+    // noinspection JSAnnotator
     function requireContext(folder, recursive, pattern) {
         var normalizedFolder = path.resolve(
             path.dirname(module.filename),

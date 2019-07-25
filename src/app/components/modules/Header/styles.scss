@@ -150,8 +150,8 @@ span.Header__hamburger.toggle-menu {
     &::after {
       transition: 0.2s all ease-in-out;
       @include themify($themes) {
-        background: themed('textColorPrimary');
-        box-shadow: 0 7px 0 themed('textColorPrimary'), 0 14px 0 themed('textColorPrimary');
+        background: #666;
+        box-shadow: 0 7px 0 #666, 0 14px 0 #666;
       }
     }
     &:hover {
