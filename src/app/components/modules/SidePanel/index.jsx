@@ -38,36 +38,36 @@ const SidePanel = ({ alignment, visible, hideSidePanel, username }) => {
 
     const sidePanelLinks = {
         internal: [
-            {
-                value: 'welcome',
-                label: tt('navigation.welcome'),
-                link: `/welcome`,
-            },
-            {
-                value: 'faq',
-                label: tt('navigation.faq'),
-                link: `/faq.html`,
-            },
-            {
-                value: 'tags',
-                label: tt('navigation.explore'),
-                link: `/tags`,
-            },
-            {
-                value: 'market',
-                label: tt('navigation.currency_market'),
-                link: `/market`,
-            },
-            {
-                value: 'recover_account_step_1',
-                label: tt('navigation.stolen_account_recovery'),
-                link: `/recover_account_step_1`,
-            },
-            {
-                value: 'change_password',
-                label: tt('navigation.change_account_password'),
-                link: `/change_password`,
-            },
+            // {
+            //     value: 'welcome',
+            //     label: tt('navigation.welcome'),
+            //     link: `/welcome`,
+            // },
+            // {
+            //     value: 'faq',
+            //     label: tt('navigation.faq'),
+            //     link: `/faq.html`,
+            // },
+            // {
+            //     value: 'tags',
+            //     label: tt('navigation.explore'),
+            //     link: `/tags`,
+            // },
+            // {
+            //     value: 'market',
+            //     label: tt('navigation.currency_market'),
+            //     link: `/market`,
+            // },
+            // {
+            //     value: 'recover_account_step_1',
+            //     label: tt('navigation.stolen_account_recovery'),
+            //     link: `/recover_account_step_1`,
+            // },
+            // {
+            //     value: 'change_password',
+            //     label: tt('navigation.change_account_password'),
+            //     link: `/change_password`,
+            // },
             {
                 value: 'vote_for_witnesses',
                 label: tt('navigation.vote_for_witnesses'),
@@ -76,67 +76,64 @@ const SidePanel = ({ alignment, visible, hideSidePanel, username }) => {
         ],
         exchanges: [
             {
-                value: 'blocktrades',
-                label: 'Blocktrades',
-                link: username
-                    ? `https://blocktrades.us/?input_coin_type=eth&output_coin_type=steem&receive_address=${
-                          username
-                      }`
-                    : `https://blocktrades.us/?input_coin_type=eth&output_coin_type=steem`,
+                value: 'idax_vit_eth',
+                label: 'IDAX VIT / ETH',
+                link: `https://www.idax.pro/exchange?pairname=VIT_ETH`,
             },
             {
-                value: 'gopax',
-                label: 'GOPAX',
-                link: 'https://www.gopax.co.kr/exchange/steem-krw/',
+                value: 'idax_vit_btc',
+                label: 'IDAX VIT / BTC',
+                link: `https://www.idax.pro/exchange?pairname=VIT_BTC`,
             },
         ],
         external: [
-            {
-                value: 'shop',
-                label: tt('navigation.shop'),
-                link: 'https://thesteemitshop.com/',
-            },
-            {
-                value: 'chat',
-                label: tt('navigation.chat'),
-                link: 'https://steem.chat/home',
-            },
-            {
-                value: 'jobs',
-                label: tt('navigation.jobs'),
-                link: 'https://jobs.lever.co/steemit',
-            },
-            {
-                value: 'tools',
-                label: tt('navigation.app_center'),
-                link: 'https://steemprojects.com/',
-            },
-            {
-                value: 'api_docs',
-                label: tt('navigation.api_docs'),
-                link: 'https://developers.steem.io/',
-            },
+            // {
+            //     value: 'shop',
+            //     label: tt('navigation.shop'),
+            //     link: 'https://thesteemitshop.com/',
+            // },
+            // {
+            //     value: 'chat',
+            //     label: tt('navigation.chat'),
+            //     link: 'https://steem.chat/home',
+            // },
+            // {
+            //     value: 'jobs',
+            //     label: tt('navigation.jobs'),
+            //     link: 'https://jobs.lever.co/steemit',
+            // },
+            // {
+            //     value: 'tools',
+            //     label: tt('navigation.app_center'),
+            //     link: 'https://steemprojects.com/',
+            // },
+            // {
+            //     value: 'api_docs',
+            //     label: tt('navigation.api_docs'),
+            //     link: 'https://developers.steem.io/',
+            // },
         ],
         organizational: [
             {
-                value: 'bluepaper',
-                label: tt('navigation.bluepaper'),
-                link: 'https://steem.io/steem-bluepaper.pdf',
+                value: 'vision_executive_summary',
+                label: 'Vision Executive Summary',
+                link:
+                    'https://visionindustry.com/downloads/Vision-Executive-Summary.pdf',
             },
-            {
-                value: 'smt_whitepaper',
-                label: tt('navigation.smt_whitepaper'),
-                link: 'https://smt.steem.io/',
-            },
-            {
-                value: 'whitepaper',
-                label: tt('navigation.whitepaper'),
-                link: 'https://steem.io/SteemWhitePaper.pdf',
-            },
+            // {
+            //     value: 'smt_whitepaper',
+            //     label: tt('navigation.smt_whitepaper'),
+            //     link: 'https://smt.steem.io/',
+            // },
+            // {
+            //     value: 'whitepaper',
+            //     label: tt('navigation.whitepaper'),
+            //     link: 'https://steem.io/SteemWhitePaper.pdf',
+            // },
             {
                 value: 'about',
                 label: tt('navigation.about'),
-                link: 'https://steem.io',
+                link: 'https://visionindustry.com',
             },
         ],
         legal: [
@@ -162,11 +159,11 @@ const SidePanel = ({ alignment, visible, hideSidePanel, username }) => {
                 label: tt('g.sign_up'),
                 link: 'https://signup.vit.tube',
             },
-            {
-                value: 'post',
-                label: tt('g.post'),
-                link: '/submit.html',
-            },
+            // {
+            //     value: 'post',
+            //     label: tt('g.post'),
+            //     link: '/submit.html',
+            // },
         ],
     };
 
@@ -185,11 +182,11 @@ const SidePanel = ({ alignment, visible, hideSidePanel, username }) => {
                         1,
                         sidePanelLinks['extras']
                     )}
-                    {makeInternalLink(
-                        sidePanelLinks['extras'][2],
-                        2,
-                        sidePanelLinks['extras']
-                    )}
+                    {/*{makeInternalLink(*/}
+                    {/*    sidePanelLinks['extras'][2],*/}
+                    {/*    2,*/}
+                    {/*    sidePanelLinks['extras']*/}
+                    {/*)}*/}
                 </ul>
                 <ul className="vertical menu">
                     {sidePanelLinks['internal'].map(makeInternalLink)}
@@ -202,9 +199,9 @@ const SidePanel = ({ alignment, visible, hideSidePanel, username }) => {
                     </li>
                     {sidePanelLinks['exchanges'].map(makeExternalLink)}
                 </ul>
-                <ul className="vertical menu">
-                    {sidePanelLinks['external'].map(makeExternalLink)}
-                </ul>
+                {/*<ul className="vertical menu">*/}
+                {/*    {sidePanelLinks['external'].map(makeExternalLink)}*/}
+                {/*</ul>*/}
                 <ul className="vertical menu">
                     {sidePanelLinks['organizational'].map(makeExternalLink)}
                 </ul>

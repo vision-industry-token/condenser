@@ -19,11 +19,11 @@ export const DEBT_TOKEN = 'VIT DOLLAR';
 export const DEBT_TOKENS = 'VIT DOLLARS';
 export const CURRENCY_SIGN = '$';
 export const WIKI_URL = ''; // https://wiki.golos.io/
-export const LANDING_PAGE_URL = 'https://steem.io/';
+export const LANDING_PAGE_URL = 'https://visionindustry.com/';
 export const TERMS_OF_SERVICE_URL = 'https://' + APP_DOMAIN + '/tos.html';
 export const PRIVACY_POLICY_URL = 'https://' + APP_DOMAIN + '/privacy.html';
 export const WHITEPAPER_URL =
-    'https://vicetoken.com/static/Vice_Industry_Token_Whitepaper.pdf';
+    'https://visionindustry.com/downloads/Vision-Executive-Summary.pdf';
 
 // default avatar and sizes
 export const DEFAULT_AVATAR = 'https://touchit.social/images/user.png';
@@ -45,13 +45,13 @@ export const FRACTION_DIGITS = 2; // default amount of decimal digits
 export const FRACTION_DIGITS_MARKET = 3; // accurate amount of deciaml digits (example: used in market)
 
 // meta info
-export const TWITTER_HANDLE = '@steemit';
+export const TWITTER_HANDLE = '@VITMediaToken';
 export const SHARE_IMAGE =
-    'https://' + APP_DOMAIN + '/images/steemit-share.png';
+    'https://' + APP_DOMAIN + '/images/touchit-share.png';
 export const TWITTER_SHARE_IMAGE =
-    'https://' + APP_DOMAIN + '/images/steemit-twshare.png';
+    'https://' + APP_DOMAIN + '/images/touchit-twshare.png';
 export const SITE_DESCRIPTION =
-    'vit.tube is a social media platform where everyone gets paid for ' +
+    'Touchit.Social is a social media platform where everyone gets paid for ' +
     'creating and curating content. It leverages a robust digital points system, called VIT, that ' +
     'supports real value for digital rewards through market price discovery and liquidity';
 
