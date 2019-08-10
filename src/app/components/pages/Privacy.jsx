@@ -5,21 +5,21 @@ class Privacy extends React.Component {
         return (
             <div className="Privacy row">
                 <div className="column large-12">
-                    <h1>Steemit, Inc Privacy Policy</h1>
-                    <h2>Effective: May 25, 2018</h2>
+                    <h1>Touchit.Social Privacy Policy</h1>
+                    <h2>Effective: August 10, 2019</h2>
                     <p className="c0">
                         <span className="c1" />
                     </p>
                     <p className="c2">
                         <span>
-                            This Privacy Policy describes how Steemit collects,
+                            This Privacy Policy describes how Touchit.Social collects,
                             uses and discloses information, and what choices you
                             have with respect to the information. This Policy
                             applies to the
                         </span>
                         <span>
-                            &nbsp;Steemit.com, steemit subdomains (e.g.,
-                            signup.steemit.com) and services
+                            &nbsp;Touchit.Social, Touchit.Social subdomains (e.g.,
+                            signup.touchit.social) and services
                         </span>
                         <span className="c1">
                             &nbsp;(collectively, &ldquo;Services&rdquo;).
@@ -33,8 +33,8 @@ class Privacy extends React.Component {
                     </p>
                     <p className="c2">
                         <span className="c1">
-                            When we refer to &ldquo;Steemit&rdquo;, we mean the
-                            Steemit entity that acts as the controller of your
+                            When we refer to &ldquo;Touchit.Social&rdquo;, we mean the
+                            Touchit.Social entity that acts as the controller of your
                             information.
                         </span>
                     </p>
@@ -66,7 +66,7 @@ class Privacy extends React.Component {
                         <span className="c1">
                             If you are visiting this site from the European
                             Union (EU), see our Notice to EU Data Subjects below
-                            for our legal bases for processing and transfer of
+                            for our legal basis for processing and transfer of
                             your data.
                         </span>
                     </p>
@@ -402,11 +402,10 @@ class Privacy extends React.Component {
                             You may access information that you have voluntarily
                             provided through your account on the Services, and
                             to review, correct, or delete it by sending a
-                            request to privacy@steemit.com. You can request to
+                            request to privacy@visionindustry.com. You can request to
                             change contact choices, opt-out of our sharing with
                             others, and update your personal information and
-                            preferences. We may require that you are the you are
-                            the user who you say you are by proving that you
+                            preferences. We may require that you are the user who you say you are by proving that you
                             have control of your posting key via our conveyor
                             API. &nbsp;For more information about our conveyor
                             API please see{' '}
@@ -429,7 +428,7 @@ class Privacy extends React.Component {
                         <span className="c1">
                             &nbsp;We welcome your comments or questions about
                             this Policy, and you may contact us at:
-                            privacy@steemit.com.
+                            privacy@visionindustry.com.
                         </span>
                     </p>
                     <p className="c0">
@@ -548,7 +547,7 @@ class Privacy extends React.Component {
                             information, which are described in the table below.
                             If you have questions about the legal bases under
                             which we process your personal information, contact
-                            us at legal@steemit.com.
+                            us at legal@visionindustry.com.
                         </span>
                     </p>
                     <p className="c0">
@@ -606,7 +605,7 @@ class Privacy extends React.Component {
                             Where our use of your personal information is based
                             upon your consent, you have the right to withdraw it
                             anytime in the manner indicated in the Service or by
-                            contacting us at privacy@steemit.com
+                            contacting us at privacy@visionindustry.com
                         </span>
                     </p>
                     <p className="c0">
@@ -728,7 +727,7 @@ class Privacy extends React.Component {
                     <p className="c2">
                         <span>
                             You can submit these requests by email to
-                            privacy@steemit.com. We may request specific
+                            privacy@visionindustry.com. We may request specific
                             information from you to help us confirm your
                             identity and process your request. Applicable law
                             may require or permit us to decline your request. If
@@ -737,7 +736,7 @@ class Privacy extends React.Component {
                             submit a complaint about our use of your personal
                             information or response to your requests regarding
                             your personal information, you may contact us at
-                            privacy@steemit.com or submit a complaint to the
+                            privacy@visionindustry.com or submit a complaint to the
                             data protection regulator in your jurisdiction. You
                             can find your data protection regulator{' '}
                         </span>
