@@ -157,7 +157,7 @@ const SidePanel = ({ alignment, visible, hideSidePanel, username }) => {
             {
                 value: 'signup',
                 label: tt('g.sign_up'),
-                link: 'https://signup.vit.tube',
+                link: 'https://join.vit.tube',
             },
             // {
             //     value: 'post',
