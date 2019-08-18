@@ -19,16 +19,16 @@ function addSiteMeta(metas) {
     metas.push({ property: 'og:description', content: site_desc });
     metas.push({
         property: 'og:image',
-        content: APP_URL + '/images/steemit.png',
+        content: APP_URL + '/images/touchit.png',
     });
     metas.push({ property: 'fb:app_id', content: $STM_Config.fb_app });
     metas.push({ name: 'twitter:card', content: 'summary' });
     metas.push({ name: 'twitter:site', content: TWITTER_HANDLE });
-    metas.push({ name: 'twitter:title', content: '#Steemit' });
+    metas.push({ name: 'twitter:title', content: '#VIT' });
     metas.push({ name: 'twitter:description', site_desc });
     metas.push({
         name: 'twitter:image',
-        content: APP_URL + '/images/steemit.png',
+        content: APP_URL + '/images/touchit.png',
     });
 }
 
@@ -60,7 +60,7 @@ export default function extractMeta(chain_data, rp) {
             metas.push({ name: 'og:url', content: url });
             metas.push({
                 name: 'og:image',
-                content: image || APP_URL + '/images/steemit.png',
+                content: image || APP_URL + '/images/touchit.png',
             });
             metas.push({ name: 'og:description', content: desc });
             metas.push({ name: 'og:site_name', content: APP_NAME });
@@ -81,7 +81,7 @@ export default function extractMeta(chain_data, rp) {
             metas.push({ name: 'twitter:description', content: desc });
             metas.push({
                 name: 'twitter:image',
-                content: image || APP_URL + '/images/steemit-twshare-2.png',
+                content: image || APP_URL + '/images/touchit-twshare-2.png',
             });
         } else {
             addSiteMeta(metas);
@@ -95,7 +95,7 @@ export default function extractMeta(chain_data, rp) {
             about =
                 'Join thousands on VITizens who share, post and earn rewards.';
         if (profile_image == null)
-            profile_image = APP_URL + '/images/steemit-twshare-2.png';
+            profile_image = APP_URL + '/images/touchit-twshare-2.png';
         // Set profile tags
         const title = `@${account.name}`;
         const desc = `The latest posts from ${name}. Follow me at @${
