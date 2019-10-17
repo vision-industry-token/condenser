@@ -12,10 +12,14 @@ export default class Advertisement extends React.Component {
     render() {
         const { unit, src, alt, href } = this.props;
         const link = href || '#';
-        const image = <img src={src || '#'} alt={alt || 'Advertisement'} />;
         const cls = `ad ${unit}`;
-        return React.createElement('a', { className: cls, href: link }, [
-            image,
-        ]);
+        const image = (
+            <img
+                className={cls}
+                src={src || '#'}
+                alt={alt || 'Advertisement'}
+            />
+        );
+        return React.createElement('a', { href: link }, [image]);
     }
 }
