@@ -4,8 +4,12 @@
     height: 250px;
 
     &.leaderboard {
-        width: 728px;
+        width: 320px;
         height: 90px;
+        @media print, screen and (min-width: 52.5em) {
+            width: 728px;
+            height: 90px;
+        }
     }
 
     &.inline-rectangle {
@@ -16,11 +20,6 @@
     &.skyscraper {
         width: 120px;
         height: 600px;
-    }
-
-    &.mobile {
-        width: 320px;
-        height: 50px;
     }
 
     &.large-mobile {
