@@ -7,19 +7,18 @@ export default class Advertisement extends React.Component {
         src: PropTypes.string,
         alt: PropTypes.string,
         href: PropTypes.string,
+        style: PropTypes.object,
     };
 
     render() {
-        const { unit, src, alt, href } = this.props;
+        const { unit, src, alt, href, style } = this.props;
         const link = href || '#';
-        const cls = `ad ${unit}`;
-        const image = (
-            <img
-                className={cls}
-                src={src || '#'}
-                alt={alt || 'Advertisement'}
-            />
+        const ad = (
+            <a href={link}>
+                <img src={src || '#'} alt={alt || 'Advertisement'} />
+            </a>
         );
-        return React.createElement('a', { href: link }, [image]);
+        const cls = `ad ${unit}`;
+        return React.createElement('div', { className: cls, style }, [ad]);
     }
 }
