@@ -17,6 +17,7 @@ import Callout from 'app/components/elements/Callout';
 // import SidebarStats from 'app/components/elements/SidebarStats';
 import SidebarLinks from 'app/components/elements/SidebarLinks';
 import SidebarNewUsers from 'app/components/elements/SidebarNewUsers';
+import Advertisement from 'app/components/elements/Advertisement';
 import ArticleLayoutSelector from 'app/components/modules/ArticleLayoutSelector';
 import Topics from './Topics';
 import SortOrder from 'app/components/elements/SortOrder';
@@ -205,88 +206,130 @@ class PostsIndex extends React.Component {
             : ' layout-list';
 
         return (
-            <div
-                className={
-                    'PostsIndex row' +
-                    (fetching ? ' fetching' : '') +
-                    layoutClass
-                }
-            >
-                <article className="articles">
-                    <div className="articles__header row">
-                        <div className="small-6 medium-6 large-6 column">
-                            <h1 className="articles__h1 show-for-mq-large articles__h1--no-wrap">
-                                {page_title}
-                            </h1>
-                            <span className="hide-for-mq-large articles__header-select">
-                                <Topics
-                                    username={this.props.username}
-                                    order={topics_order}
-                                    current={category}
-                                    categories={categories}
-                                    compact={true}
-                                />
-                            </span>
-                        </div>
-                        <div className="small-6 medium-5 large-5 column hide-for-large articles__header-select">
-                            <SortOrder
-                                sortOrder={this.props.sortOrder}
-                                topic={this.props.topic}
-                                horizontal={false}
-                            />
-                        </div>
-                        <div className="medium-1 show-for-mq-medium column">
-                            <ArticleLayoutSelector />
-                        </div>
-                    </div>
-                    <hr className="articles__hr" />
-                    {!fetching && (posts && !posts.size) ? (
-                        <Callout>{emptyText}</Callout>
-                    ) : (
-                        <PostsList
-                            ref="list"
-                            posts={posts ? posts : List()}
-                            loading={fetching}
-                            category={category}
-                            loadMore={this.loadMore}
-                            showSpam={showSpam}
-                        />
-                    )}
-                </article>
-                <aside className="c-sidebar c-sidebar--right">
-                    {this.props.isBrowser &&
-                    !this.props.maybeLoggedIn &&
-                    !this.props.username ? (
-                        <SidebarNewUsers />
-                    ) : (
-                        this.props.isBrowser && (
-                            <div>
-                                {/* <SidebarStats steemPower={123} followers={23} reputation={62} />  */}
-                                <SidebarLinks username={this.props.username} />
+            <div>
+                <Advertisement
+                    unit="leaderboard"
+                    style={{ margin: '0 auto 1.2em auto' }}
+                    desktop={[
+                        {
+                            src:
+                                'https://www.redlightcenter.com/Content/Banners/AdID_2019102405316260.gif',
+                            href:
+                                'https://www.redlightcenter.com/?trq=VIT_DK_Hdr_728a',
+                        },
+                        {
+                            src:
+                                'https://www.redlightcenter.com/Content/Banners/AdID_4780.gif',
+                            href:
+                                'https://www.redlightcenter.com/?trq=VIT_DK_Hdr_728b',
+                        },
+                        {
+                            src:
+                                'https://www.redlightcenter.com/Content/Banners/AdID_4794.gif',
+                            href:
+                                'https://www.redlightcenter.com/?trq=VIT_events_728c',
+                        },
+                        {
+                            src:
+                                'https://www.redlightcenter.com/Content/Banners/AdID_4796.gif',
+                            href:
+                                'https://www.redlightcenter.com/?trq=VIT_events_728d',
+                        },
+                    ]}
+                    mobile={[
+                        {
+                            src:
+                                'https://www.redlightcenter.com//Content/Banners/AdID_4782.gif',
+                            href:
+                                'https://www.redlightcenter.com/?trq=VIT_MB_hdr_300A',
+                        },
+                    ]}
+                />
+                <div
+                    className={
+                        'PostsIndex row' +
+                        (fetching ? ' fetching' : '') +
+                        layoutClass
+                    }
+                >
+                    <article className="articles">
+                        <div className="articles__header row">
+                            <div className="small-6 medium-6 large-6 column">
+                                <h1 className="articles__h1 show-for-mq-large articles__h1--no-wrap">
+                                    {page_title}
+                                </h1>
+                                <span className="hide-for-mq-large articles__header-select">
+                                    <Topics
+                                        username={this.props.username}
+                                        order={topics_order}
+                                        current={category}
+                                        categories={categories}
+                                        compact={true}
+                                    />
+                                </span>
                             </div>
-                        )
-                    )}
-                </aside>
-                <aside className="c-sidebar c-sidebar--left">
-                    <Topics
-                        order={topics_order}
-                        current={category}
-                        compact={false}
-                        username={this.props.username}
-                        categories={categories}
-                    />
-                    <small>
-                        <a
-                            className="c-sidebar__more-link"
-                            onClick={this.onShowSpam}
-                        >
-                            {showSpam
-                                ? tt('g.next_3_strings_together.show_less')
-                                : tt('g.next_3_strings_together.show_more')}
-                        </a>
-                        {' ' + tt('g.next_3_strings_together.value_posts')}
-                    </small>
-                </aside>
+                            <div className="small-6 medium-5 large-5 column hide-for-large articles__header-select">
+                                <SortOrder
+                                    sortOrder={this.props.sortOrder}
+                                    topic={this.props.topic}
+                                    horizontal={false}
+                                />
+                            </div>
+                            <div className="medium-1 show-for-mq-medium column">
+                                <ArticleLayoutSelector />
+                            </div>
+                        </div>
+                        <hr className="articles__hr" />
+                        {!fetching && (posts && !posts.size) ? (
+                            <Callout>{emptyText}</Callout>
+                        ) : (
+                            <PostsList
+                                ref="list"
+                                posts={posts ? posts : List()}
+                                loading={fetching}
+                                category={category}
+                                loadMore={this.loadMore}
+                                showSpam={showSpam}
+                            />
+                        )}
+                    </article>
+                    <aside className="c-sidebar c-sidebar--right">
+                        {this.props.isBrowser &&
+                        !this.props.maybeLoggedIn &&
+                        !this.props.username ? (
+                            <SidebarNewUsers />
+                        ) : (
+                            this.props.isBrowser && (
+                                <div>
+                                    {/* <SidebarStats steemPower={123} followers={23} reputation={62} />  */}
+                                    <SidebarLinks
+                                        username={this.props.username}
+                                    />
+                                </div>
+                            )
+                        )}
+                    </aside>
+                    <aside className="c-sidebar c-sidebar--left">
+                        <Topics
+                            order={topics_order}
+                            current={category}
+                            compact={false}
+                            username={this.props.username}
+                            categories={categories}
+                        />
+                        <small>
+                            <a
+                                className="c-sidebar__more-link"
+                                onClick={this.onShowSpam}
+                            >
+                                {showSpam
+                                    ? tt('g.next_3_strings_together.show_less')
+                                    : tt('g.next_3_strings_together.show_more')}
+                            </a>
+                            {' ' + tt('g.next_3_strings_together.value_posts')}
+                        </small>
+                    </aside>
+                </div>
             </div>
         );
     }

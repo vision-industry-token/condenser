@@ -9,7 +9,6 @@ import ConnectedSidePanel from 'app/components/modules/ConnectedSidePanel';
 import CloseButton from 'app/components/elements/CloseButton';
 import Dialogs from 'app/components/modules/Dialogs';
 import Modals from 'app/components/modules/Modals';
-import Advertisement from 'app/components/elements/Advertisement';
 import WelcomePanel from 'app/components/elements/WelcomePanel';
 import MiniHeader from 'app/components/modules/MiniHeader';
 import tt from 'counterpart';
@@ -237,10 +236,6 @@ class App extends React.Component {
                 )}
 
                 <div className="App__content">
-                    <Advertisement
-                        unit="leaderboard"
-                        style={{ margin: '0 auto' }}
-                    />
                     {process.env.BROWSER &&
                     ip &&
                     new_visitor &&
