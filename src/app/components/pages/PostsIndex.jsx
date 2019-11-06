@@ -243,6 +243,12 @@ class PostsIndex extends React.Component {
                             href:
                                 'https://www.redlightcenter.com/?trq=VIT_MB_hdr_300A',
                         },
+                        {
+                            src:
+                                'https://www.redlightcenter.com/Content/Banners/AdID_4781.gif',
+                            href:
+                                'https://www.redlightcenter.com/?trq=VIT_MB_hdr_300B',
+                        },
                     ]}
                 />
                 <div
