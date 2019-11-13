@@ -37,3 +37,26 @@
         max-height: 100px;
     }
 }
+// only show ads in-between posts on mobile sizes
+.articles {
+    .ad {
+        @media screen and (min-width: 75em) {
+            display: none !important;
+        }
+    }
+}
+
+.Post {
+    .ad {
+        &.skyscraper {
+            @media screen and (max-width: 64em) {
+                display: none !important;
+            }
+        }
+        &.leaderboard {
+            @media screen and (min-width: 64em) {
+                display: none !important;
+            }
+        }
+    }
+}

@@ -189,11 +189,20 @@ class PostsList extends React.Component {
                         />
                     </li>
                 );
-                // if (i % adSpacing === 0) {
-                //     mapped.push(
-
-                //     );
-                // }
+                if (i % adSpacing === 0) {
+                    mapped.push(
+                        <Advertisement
+                            unit="inline-rectangle"
+                            style={{ margin: '0 auto 1.4em' }}
+                            allSizes={[
+                                {
+                                    src:
+                                        'https://www.redlightcenter.com/Content/Banners/AdID_20191021135833705.jpeg',
+                                },
+                            ]}
+                        />
+                    );
+                }
             }
             return mapped;
         };

@@ -2,6 +2,7 @@ import React from 'react';
 // import ReactMarkdown from 'react-markdown';
 import PropTypes from 'prop-types';
 import Comment from 'app/components/cards/Comment';
+import Advertisement from 'app/components/elements/Advertisement';
 import PostFull from 'app/components/cards/PostFull';
 import { connect } from 'react-redux';
 
@@ -194,13 +195,69 @@ class Post extends React.Component {
         return (
             <div className="Post">
                 <div className="row">
-                    <div className="column">
+                    <div className="columns large-10 medium-12 small-12">
                         <PostFull post={post} cont={content} />
+                    </div>
+                    <div className="columns large-2 medium-12 small-12">
+                        <Advertisement
+                            unit="skyscraper"
+                            style={{ marginTop: '2rem' }}
+                            allSizes={[
+                                {
+                                    src:
+                                        'https://www.redlightcenter.com/Content/Banners/AdID_20191021141212908.jpeg',
+                                },
+                            ]}
+                        />
+                        <Advertisement
+                            unit="leaderboard"
+                            style={{ margin: '1rem auto 0 auto' }}
+                            desktop={[
+                                {
+                                    src:
+                                        'https://www.redlightcenter.com/Content/Banners/AdID_2019102405316260.gif',
+                                    href:
+                                        'https://www.redlightcenter.com/?trq=VIT_DK_Hdr_728a',
+                                },
+                                {
+                                    src:
+                                        'https://www.redlightcenter.com/Content/Banners/AdID_4780.gif',
+                                    href:
+                                        'https://www.redlightcenter.com/?trq=VIT_DK_Hdr_728b',
+                                },
+                                {
+                                    src:
+                                        'https://www.redlightcenter.com/Content/Banners/AdID_4794.gif',
+                                    href:
+                                        'https://www.redlightcenter.com/?trq=VIT_events_728c',
+                                },
+                                {
+                                    src:
+                                        'https://www.redlightcenter.com/Content/Banners/AdID_4796.gif',
+                                    href:
+                                        'https://www.redlightcenter.com/?trq=VIT_events_728d',
+                                },
+                            ]}
+                            mobile={[
+                                {
+                                    src:
+                                        'https://www.redlightcenter.com//Content/Banners/AdID_4782.gif',
+                                    href:
+                                        'https://www.redlightcenter.com/?trq=VIT_MB_hdr_300A',
+                                },
+                                {
+                                    src:
+                                        'https://www.redlightcenter.com/Content/Banners/AdID_4781.gif',
+                                    href:
+                                        'https://www.redlightcenter.com/?trq=VIT_MB_hdr_300B',
+                                },
+                            ]}
+                        />
                     </div>
                 </div>
                 {!isLoggedIn() && (
                     <div className="row">
-                        <div className="column">
+                        <div className="columns large-10">
                             <div className="Post__promo">
                                 {tt(
                                     'g.next_7_strings_single_block.authors_get_paid_when_people_like_you_upvote_their_post'
@@ -222,7 +279,7 @@ class Post extends React.Component {
                     </div>
                 )}
                 <div id="#comments" className="Post_comments row hfeed">
-                    <div className="column large-12">
+                    <div className="column large-10">
                         <div className="Post_comments__content">
                             {positiveComments.length ? (
                                 <div className="Post__comments_sort_order float-right">

@@ -314,6 +314,15 @@ class PostsIndex extends React.Component {
                                 </div>
                             )
                         )}
+                        <Advertisement
+                            unit="skyscraper"
+                            allSizes={[
+                                {
+                                    src:
+                                        'https://www.redlightcenter.com/Content/Banners/AdID_20191021141212908.jpeg',
+                                },
+                            ]}
+                        />
                     </aside>
                     <aside className="c-sidebar c-sidebar--left">
                         <Topics
