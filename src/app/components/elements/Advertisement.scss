@@ -1,7 +1,5 @@
 .ad {
     background-color: white;
-    width: 300px;
-    height: 250px;
 
     .desktop {
         @media screen and (max-width: 52.5em) {
@@ -16,26 +14,26 @@
     }
 
     &.leaderboard {
-        width: 300px;
-        height: 100px;
+        max-width: 300px;
+        max-height: 100px;
         @media print, screen and (min-width: 52.5em) {
-            width: 728px;
-            height: 90px;
+            max-width: 728px;
+            max-height: 90px;
         }
     }
 
     &.inline-rectangle {
-        width: 300px;
-        height: 250px;
+        max-width: 300px;
+        max-height: 250px;
     }
 
     &.skyscraper {
-        width: 120px;
-        height: 600px;
+        max-width: 120px;
+        max-height: 600px;
     }
 
     &.large-mobile {
-        width: 320px;
-        height: 100px;
+        max-width: 320px;
+        max-height: 100px;
     }
 }
