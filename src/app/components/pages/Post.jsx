@@ -195,17 +195,31 @@ class Post extends React.Component {
         return (
             <div className="Post">
                 <div className="row">
-                    <div className="columns large-10 medium-12 small-12">
+                    <div className="columns large-8 medium-12 small-12">
                         <PostFull post={post} cont={content} />
                     </div>
-                    <div className="columns large-2 medium-12 small-12">
+                    <div className="video-page-ad-column columns large-4 medium-12 small-12">
                         <Advertisement
-                            unit="skyscraper"
+                            unit="inline-rectangle"
                             style={{ marginTop: '2rem' }}
                             allSizes={[
                                 {
                                     src:
-                                        'https://www.redlightcenter.com/Content/Banners/AdID_20191021141212908.jpeg',
+                                        'https://www.redlightcenter.com/Content/Banners/AdID_20191114114630408.gif',
+                                    href:
+                                        'https://www.redlightcenter.com/?trq=t_social_300_250_topA_VideoPage',
+                                },
+                            ]}
+                        />
+                        <Advertisement
+                            unit="inline-rectangle"
+                            style={{ marginTop: '2rem' }}
+                            allSizes={[
+                                {
+                                    src:
+                                        'https://www.redlightcenter.com/Content/Banners/AdID_4829.gif',
+                                    href:
+                                        'https://www.redlightcenter.com/?trq=t_social_300_250_topB_VideoPage',
                                 },
                             ]}
                         />
@@ -215,41 +229,29 @@ class Post extends React.Component {
                             desktop={[
                                 {
                                     src:
-                                        'https://www.redlightcenter.com/Content/Banners/AdID_2019102405316260.gif',
+                                        'https://www.redlightcenter.com/Content/Banners/AdID_4832.gif',
                                     href:
-                                        'https://www.redlightcenter.com/?trq=VIT_DK_Hdr_728a',
+                                        'https://www.redlightcenter.com/?trq=t_social_728_H_Tablet1',
                                 },
                                 {
                                     src:
-                                        'https://www.redlightcenter.com/Content/Banners/AdID_4780.gif',
+                                        'https://www.redlightcenter.com/Content/Banners/AdID_4833.gif',
                                     href:
-                                        'https://www.redlightcenter.com/?trq=VIT_DK_Hdr_728b',
-                                },
-                                {
-                                    src:
-                                        'https://www.redlightcenter.com/Content/Banners/AdID_4794.gif',
-                                    href:
-                                        'https://www.redlightcenter.com/?trq=VIT_events_728c',
-                                },
-                                {
-                                    src:
-                                        'https://www.redlightcenter.com/Content/Banners/AdID_4796.gif',
-                                    href:
-                                        'https://www.redlightcenter.com/?trq=VIT_events_728d',
+                                        'https://www.redlightcenter.com/?trq=t_social_728_H_Tablet2',
                                 },
                             ]}
                             mobile={[
                                 {
                                     src:
-                                        'https://www.redlightcenter.com//Content/Banners/AdID_4782.gif',
+                                        'https://www.redlightcenter.com/Content/Banners/AdID_4830.gif',
                                     href:
-                                        'https://www.redlightcenter.com/?trq=VIT_MB_hdr_300A',
+                                        'https://www.redlightcenter.com/?trq=t_social_3_100_VideoPage_H',
                                 },
                                 {
                                     src:
-                                        'https://www.redlightcenter.com/Content/Banners/AdID_4781.gif',
+                                        'https://www.redlightcenter.com/Content/Banners/AdID_4831.gif',
                                     href:
-                                        'https://www.redlightcenter.com/?trq=VIT_MB_hdr_300B',
+                                        'https://www.redlightcenter.com/?trq=t_social_3_100_VideoPage_H_2',
                                 },
                             ]}
                         />
@@ -257,7 +259,7 @@ class Post extends React.Component {
                 </div>
                 {!isLoggedIn() && (
                     <div className="row">
-                        <div className="columns large-10">
+                        <div className="columns large-8">
                             <div className="Post__promo">
                                 {tt(
                                     'g.next_7_strings_single_block.authors_get_paid_when_people_like_you_upvote_their_post'
@@ -279,7 +281,7 @@ class Post extends React.Component {
                     </div>
                 )}
                 <div id="#comments" className="Post_comments row hfeed">
-                    <div className="column large-10">
+                    <div className="column large-8">
                         <div className="Post_comments__content">
                             {positiveComments.length ? (
                                 <div className="Post__comments_sort_order float-right">

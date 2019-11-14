@@ -319,7 +319,15 @@ class PostsIndex extends React.Component {
                             allSizes={[
                                 {
                                     src:
-                                        'https://www.redlightcenter.com/Content/Banners/AdID_20191021141212908.jpeg',
+                                        'https://www.redlightcenter.com/Content/Banners/AdID_4834.gif',
+                                    href:
+                                        'https://www.redlightcenter.com/?trq=t_social_120_Sidebar1',
+                                },
+                                {
+                                    src:
+                                        'https://www.redlightcenter.com/Content/Banners/AdID_4835.gif',
+                                    href:
+                                        'https://www.redlightcenter.com/?trq=t_social_120_Sidebar1',
                                 },
                             ]}
                         />
