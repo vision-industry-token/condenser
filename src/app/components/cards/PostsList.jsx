@@ -197,7 +197,27 @@ class PostsList extends React.Component {
                             allSizes={[
                                 {
                                     src:
-                                        'https://www.redlightcenter.com/Content/Banners/AdID_20191021135833705.jpeg',
+                                        'https://www.redlightcenter.com/Content/Banners/AdID_4863.gif',
+                                    href:
+                                        'https://www.redlightcenter.com/?trq=t_social_300_MobileTablet_1',
+                                },
+                                {
+                                    src:
+                                        'https://www.redlightcenter.com/Content/Banners/AdID_4864.gif',
+                                    href:
+                                        'https://www.redlightcenter.com/?trq=t_social_300_MobileTablet_2',
+                                },
+                                {
+                                    src:
+                                        'https://www.redlightcenter.com/Content/Banners/AdID_4865.gif',
+                                    href:
+                                        'https://www.redlightcenter.com/?trq=t_social_300_MobileTablet_3',
+                                },
+                                {
+                                    src:
+                                        'https://www.redlightcenter.com/Content/Banners/AdID_4866.gif',
+                                    href:
+                                        'https://www.redlightcenter.com/?trq=t_social_300_MobileTablet_4',
                                 },
                             ]}
                         />
