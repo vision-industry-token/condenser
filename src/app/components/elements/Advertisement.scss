@@ -1,0 +1,67 @@
+.ad {
+    background-color: white;
+
+    .desktop {
+        @media screen and (max-width: 52.5em) {
+            display: none !important;
+        }
+    }
+
+    .mobile {
+        @media screen and (min-width: 52.5em) {
+            display: none !important;
+        }
+    }
+
+    &.leaderboard {
+        max-width: 300px;
+        max-height: 100px;
+        @media print, screen and (min-width: 52.5em) {
+            max-width: 728px;
+            max-height: 90px;
+        }
+    }
+
+    &.inline-rectangle {
+        max-width: 300px;
+        max-height: 250px;
+    }
+
+    &.skyscraper {
+        max-width: 120px;
+        max-height: 600px;
+    }
+
+    &.large-mobile {
+        max-width: 320px;
+        max-height: 100px;
+    }
+}
+// only show ads in-between posts on mobile sizes
+.articles {
+    .ad {
+        @media screen and (min-width: 75em) {
+            display: none !important;
+        }
+    }
+}
+
+.Post {
+    .ad {
+        &.inline-rectangle {
+            @media screen and (max-width: 64em) {
+                display: none !important;
+            }
+        }
+        &.leaderboard {
+            @media screen and (min-width: 64em) {
+                display: none !important;
+            }
+        }
+    }
+    .video-page-ad-column {
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+    }
+}

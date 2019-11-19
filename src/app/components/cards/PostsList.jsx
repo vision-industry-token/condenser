@@ -11,6 +11,7 @@ import debounce from 'lodash.debounce';
 import CloseButton from 'app/components/elements/CloseButton';
 import { findParent } from 'app/utils/DomUtils';
 import { shouldDisplayPost } from 'app/utils/StateFunctions';
+import Advertisement from 'app/components/elements/Advertisement';
 import Icon from 'app/components/elements/Icon';
 import shouldComponentUpdate from 'app/utils/shouldComponentUpdate';
 
@@ -171,18 +172,60 @@ class PostsList extends React.Component {
                 // rephide
                 postsInfo.push({ item, ignore });
         });
-        const renderSummary = items =>
-            items.map(item => (
-                <li key={item.item}>
-                    <PostSummary
-                        account={account}
-                        post={item.item}
-                        thumbSize={thumbSize}
-                        ignore={item.ignore}
-                        nsfwPref={nsfwPref}
-                    />
-                </li>
-            ));
+
+        const renderSummary = items => {
+            const adSpacing = 5;
+            const mapped = [];
+            for (let i = 1; i <= items.length; i++) {
+                const el = items[i - 1];
+                mapped.push(
+                    <li key={el.item}>
+                        <PostSummary
+                            account={account}
+                            post={el.item}
+                            thumbSize={thumbSize}
+                            ignore={el.ignore}
+                            nsfwPref={nsfwPref}
+                        />
+                    </li>
+                );
+                if (i % adSpacing === 0) {
+                    mapped.push(
+                        <Advertisement
+                            unit="inline-rectangle"
+                            style={{ margin: '0 auto 1.4em' }}
+                            allSizes={[
+                                {
+                                    src:
+                                        'https://www.redlightcenter.com/Content/Banners/AdID_4863.gif',
+                                    href:
+                                        'https://www.redlightcenter.com/?trq=t_social_300_MobileTablet_1',
+                                },
+                                {
+                                    src:
+                                        'https://www.redlightcenter.com/Content/Banners/AdID_4864.gif',
+                                    href:
+                                        'https://www.redlightcenter.com/?trq=t_social_300_MobileTablet_2',
+                                },
+                                {
+                                    src:
+                                        'https://www.redlightcenter.com/Content/Banners/AdID_4865.gif',
+                                    href:
+                                        'https://www.redlightcenter.com/?trq=t_social_300_MobileTablet_3',
+                                },
+                                {
+                                    src:
+                                        'https://www.redlightcenter.com/Content/Banners/AdID_4866.gif',
+                                    href:
+                                        'https://www.redlightcenter.com/?trq=t_social_300_MobileTablet_4',
+                                },
+                            ]}
+                        />
+                    );
+                }
+            }
+            return mapped;
+        };
 
         return (
             <div id="posts_list" className="PostsList">
